@@ -13,7 +13,7 @@ spec:
     - "*.curso-k8s.ddns.net"
     secretName: app-tls
   rules:
-    - host: "*"
+    - host: "*.curso-k8s.ddns.net"
       http:
         paths:
           - pathType: Prefix
