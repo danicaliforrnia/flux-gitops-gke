@@ -10,5 +10,16 @@ metadata:
 spec:
   tls:
   - hosts:
-    - backend.curso-k8s.ddns.net
+    - "*.curso-k8s.ddns.net"
     secretName: app-tls
+  rules:
+    - host: "*"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: ""
+                port:
+                  number: 80
