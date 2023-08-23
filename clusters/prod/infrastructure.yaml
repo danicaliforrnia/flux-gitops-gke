@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 15m
-  path: ./infrastructure/prod/cert-manager
+  path: ./infrastructure/prod
   prune: true 
   wait: true
   timeout: 2m
@@ -17,19 +17,3 @@ spec:
       kind: Deployment
       name: cert-manager
       namespace: cert-manager
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: ingress
-  namespace: flux-system
-spec:
-  interval: 15m
-  path: ./infrastructure/prod/ingress
-  prune: true 
-  wait: true
-  timeout: 2m
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
----
