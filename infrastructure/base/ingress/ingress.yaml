@@ -20,6 +20,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: ""
+                name: "kubernetes"
                 port:
                   number: 80
