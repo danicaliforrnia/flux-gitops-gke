@@ -17,3 +17,7 @@ spec:
       kind: Deployment
       name: cert-manager
       namespace: cert-manager
+    - apiVersion: apps/v1
+      kind: Ingress
+      name: gke-ingress
+      namespace: infrastructure
