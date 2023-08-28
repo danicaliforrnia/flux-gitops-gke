@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:9509b84
+        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:e3120a7
         resources:
           limits:
             memory: "128Mi"
