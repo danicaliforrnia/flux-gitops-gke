@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: hello-apps
+spec:
+  selector:
+    matchLabels:
+      app: hello
+      tier: backend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hello
+        tier: backend
+    spec:
+      containers:
+      - name: hello
+        image: "gcr.io/google-samples/hello-go-gke:1.0"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 80

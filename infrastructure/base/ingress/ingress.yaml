@@ -20,6 +20,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: "kubernetes"
+                name: frontend
+                namespace: hello-apps
                 port:
                   number: 80
