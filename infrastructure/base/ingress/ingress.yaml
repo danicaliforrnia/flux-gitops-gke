@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - "*.curso-k8s.ddns.net"
+    - "curso-k8s.ddns.net"
     secretName: app-tls
   rules:
-    - host: "*.curso-k8s.ddns.net"
+    - host: "curso-k8s.ddns.net"
       http:
         paths:
           - pathType: Prefix
