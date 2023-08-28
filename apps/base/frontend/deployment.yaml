@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: hello-apps
 spec:
   selector:
     matchLabels:
@@ -17,7 +16,8 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:e3120a7
+        #image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:e3120a7
+        image: "gcr.io/google-samples/hello-frontend:1.0"
         resources:
           limits:
             memory: "128Mi"

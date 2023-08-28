@@ -6,3 +6,4 @@ resources:
   - repository.yaml
   - config-map.yaml
   - release.yaml
+  - cluster-issuer.yaml
