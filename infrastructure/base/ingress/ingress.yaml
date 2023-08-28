@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gke-ingress
-  namespace: infrastructure
+  namespace: hello-apps
   annotations:
     kubernetes.io/ingress.class: "gce"
     kubernetes.io/ingress.allow-http: "true"
@@ -21,6 +21,5 @@ spec:
             backend:
               service:
                 name: frontend
-                namespace: hello-apps
                 port:
                   number: 80
