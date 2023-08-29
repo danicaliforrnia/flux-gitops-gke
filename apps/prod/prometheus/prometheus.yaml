@@ -6,7 +6,8 @@ metadata:
 spec:
   serviceAccountName: prometheus
   externalUrl: http://monitoring-k8s.ddns.net/prometheus
-  serviceMonitoringSelector: {}
+  serviceMonitorSelector: {}
+  serviceMonitorNamespaceSelector: {}
   ruleSelector: {}
   ruleNamespaceSelector: {}
   resources:
