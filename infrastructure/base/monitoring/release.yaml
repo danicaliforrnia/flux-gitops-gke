@@ -4,16 +4,17 @@ metadata:
   name: prometheus-operator
   namespace: monitoring
 spec:
-  releaseName: prometheus-operator
   chart:
     spec:
       chart: kube-prometheus-stack
+      version: v48.3.x
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
-        namespace: prometheus
-        version: "48.3.1"
-  interval: 1h0m0s
+        namespace: monitoring
+  interval: 15m
+  timeout: 5m
+  releaseName: prometheus-operator
   install:
     remediation:
       retries: 3
