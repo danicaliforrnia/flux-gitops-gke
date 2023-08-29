@@ -24,7 +24,7 @@ spec:
       http:
         paths:
           - pathType: ImplementationSpecific
-            path: /*
+            path: /hello
             backend:
               service:
                 name: frontend
