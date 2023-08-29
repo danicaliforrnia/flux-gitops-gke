@@ -21,10 +21,10 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: monitoring-prometheus
+  name: infrastructure-ingress
   namespace: flux-system
 spec:
-  path: ./infrastructure/base/monitoring-prometheus
+  path: ./infrastructure/base/ingress
   sourceRef:
     kind: GitRepository
     name: flux-system
