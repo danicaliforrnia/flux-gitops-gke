@@ -14,16 +14,11 @@ spec:
     - hosts:
         - curso-k8s.ddns.net
       secretName: apps-tls
-  defaultBackend:
-    service:
-      name: frontend
-      port:
-        number: 80
   rules:
     - host: curso-k8s.ddns.net
       http:
         paths:
-          - pathType: ImplementationSpecific
+          - pathType: Prefix
             path: /hello/*
             backend:
               service:
