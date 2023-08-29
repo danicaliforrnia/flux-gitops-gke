@@ -22,14 +22,14 @@ spec:
       http:
         paths:
           - pathType: ImplementationSpecific
-            path: "/"
+            path: /*
             backend:
               service:
                 name: frontend
                 port:
                   number: 80
           - pathType: ImplementationSpecific
-            path: /prometheus(/|$)(.*)
+            path: /prometheus
             backend:
               service:
                 name: prometheus
