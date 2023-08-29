@@ -13,6 +13,11 @@ spec:
   - hosts:
     - "curso2-k8s.ddns.net"
     secretName: app-tls
+  defaultBackend:
+    service:
+      name: frontend
+      port:
+        number: 80
   rules:
     - host: "curso2-k8s.ddns.net"
       http:
