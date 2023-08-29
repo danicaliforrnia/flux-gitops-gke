@@ -4,5 +4,7 @@ resources:
   - prometheus.yaml
   - alert-manager-config.yaml
   - alert-manager.yaml
+  - secret.yaml
+  - issuer.yaml
   - service.yaml
   - ingress.yaml
