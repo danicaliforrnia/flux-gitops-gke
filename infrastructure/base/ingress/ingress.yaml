@@ -11,14 +11,16 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
-  - secretName: apps-tls
+    - hosts:
+        - curso-k8s.ddns.net
+      secretName: apps-tls
   defaultBackend:
     service:
       name: frontend
       port:
         number: 80
   rules:
-    - host: "curso-k8s.ddns.net"
+    - host: curso-k8s.ddns.net
       http:
         paths:
           - pathType: ImplementationSpecific
