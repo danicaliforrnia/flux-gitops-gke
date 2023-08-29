@@ -7,6 +7,7 @@ metadata:
     kubernetes.io/ingress.class: "gce"
     kubernetes.io/ingress.allow-http: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
+    kubernetes.io/ingress.global-static-ip-name: "public-frontend-ip"
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
@@ -22,8 +23,8 @@ spec:
     - host: "curso2-k8s.ddns.net"
       http:
         paths:
-          - pathType: Prefix
-            path: /
+          - pathType: ImplementationSpecific
+            path: "/*"
             backend:
               service:
                 name: frontend
