@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: alertmanager
+  name: alert-manager
   namespace: monitoring
 spec:
   type: ClusterIP
@@ -26,4 +26,4 @@ spec:
     protocol: TCP
     targetPort: web
   selector:
-    alertmanager: prometheus
+    alertmanager: alert-manager
