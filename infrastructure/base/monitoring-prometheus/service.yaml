@@ -4,7 +4,7 @@ metadata:
   name: prometheus
   namespace: monitoring
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: web
     port: 9090
@@ -19,7 +19,7 @@ metadata:
   name: alert-manager
   namespace: monitoring
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: web
     port: 9093

@@ -12,7 +12,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - "curso2-k8s.ddns.net"
+    - "curso-k8s.ddns.net"
     secretName: app-tls
   defaultBackend:
     service:
@@ -20,7 +20,7 @@ spec:
       port:
         number: 80
   rules:
-    - host: "curso2-k8s.ddns.net"
+    - host: "curso-k8s.ddns.net"
       http:
         paths:
           - pathType: ImplementationSpecific

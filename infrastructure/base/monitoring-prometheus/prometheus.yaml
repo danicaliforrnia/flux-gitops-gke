@@ -48,8 +48,12 @@ metadata:
   name: prometheus
   namespace: monitoring
 spec:
-  externalUrl: http://monitoring-k8s.ddns.net/prometheus
   serviceAccountName: prometheus
+  externalUrl: http://monitoring-k8s.ddns.net/prometheus
+  serviceMonitoringSelector: {}
+  serviceMonitoringNamespaceSelector: {}
+  ruleSelector: {}
+  ruleNamespaceSelector: {}
   resources:
     requests:
       memory: 400Mi

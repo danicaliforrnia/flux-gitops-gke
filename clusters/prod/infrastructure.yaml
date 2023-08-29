@@ -21,23 +21,6 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cert-manager-issuers
-  namespace: flux-system
-spec:
-  path: ./infrastructure/base/cert-manager-issuers
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  dependsOn:
-  - name: infrastructure
-  interval: 15m
-  timeout: 2m
-  prune: true 
-  wait: true
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
   name: monitoring-prometheus
   namespace: flux-system
 spec:
