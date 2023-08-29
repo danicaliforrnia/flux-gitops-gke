@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:e0c79b7
+        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:a29ebc9
         #image: "gcr.io/google-samples/hello-frontend:1.0"
         resources:
           limits:
