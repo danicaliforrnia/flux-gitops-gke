@@ -30,8 +30,8 @@ spec:
                 name: frontend
                 port:
                   number: 80
-          - pathType: ImplementationSpecific
-            path: /prometheus
+          - pathType: Prefix
+            path: /prometheus/*
             backend:
               service:
                 name: prometheus
