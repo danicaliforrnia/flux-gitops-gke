@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   serviceAccountName: prometheus
-  externalUrl: http://cursos-k8s.ddns.net/prometheus
+  externalUrl: http://curso-k8s.ddns.net/prometheus
   serviceMonitorSelector: {}
   serviceMonitorNamespaceSelector: {}
   ruleSelector: {}
