@@ -21,7 +21,7 @@ spec:
       serviceAccountName: frontend-sa
       containers:
       - name: gke-frontend-app
-        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:50db57f
+        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:19e6bdd
         resources:
           limits:
             memory: "128Mi"
