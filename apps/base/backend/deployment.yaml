@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: backend
   namespace: default
+  labels:
+    app: hello
+    tier: frontend  
 spec:
   selector:
     matchLabels:

@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: frontend
   namespace: default
+  labels:
+    app: hello
+    tier: frontend
 spec:
   selector:
     matchLabels:
@@ -17,16 +20,12 @@ spec:
     spec:
       serviceAccountName: frontend-sa
       containers:
-      - name: nginx
+      - name: gke-frontend-app
         image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:a29ebc9
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
-        lifecycle:
-          preStop:
-            exec:
-              command: ["/usr/sbin/nginx","-s","quit"]
         ports:
         - name: http
           containerPort: 80
