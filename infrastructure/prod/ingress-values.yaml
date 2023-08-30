@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gke-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.allow-http: "true"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    kubernetes.io/ingress.global-static-ip-name: "public-ip"
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: prod-frontend
+                port:
+                  number: 80
+          - backend:
+              service:
+                name: prod-backend
+                port:
+                  number: 80
