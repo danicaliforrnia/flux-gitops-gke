@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backend-sa
+  namespace: default
+  annotations:
+    iam.gke.io/gcp-service-account: "backend-sa@cursos-imagina.iam.gserviceaccount.com"

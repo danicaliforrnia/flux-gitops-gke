@@ -15,6 +15,7 @@ spec:
         app: hello
         tier: frontend
     spec:
+      serviceAccountName: frontend-sa
       containers:
       - name: nginx
         image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:a29ebc9

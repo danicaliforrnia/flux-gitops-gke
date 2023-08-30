@@ -15,6 +15,7 @@ spec:
         app: hello
         tier: backend
     spec:
+      serviceAccountName: backend-sa
       containers:
       - name: hello
         image: "gcr.io/google-samples/hello-go-gke:1.0"
