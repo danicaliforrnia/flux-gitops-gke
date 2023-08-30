@@ -34,3 +34,14 @@ spec:
   timeout: 2m
   prune: true 
   wait: true
+  patches:
+  - target:
+      kind: Ingress
+      name: gke-ingress
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/http/paths/0/backend/service/name
+        value: prod-frontend
+      - op: replace
+        path: /spec/rules/0/http/paths/1/backend/service/name
+        value: prod-backend
