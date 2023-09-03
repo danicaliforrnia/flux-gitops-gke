@@ -6,3 +6,4 @@ namePrefix: prod-
 patchesStrategicMerge:
   - backend/deployment-values.yaml
   - backend/hpa-values.yaml
+  - backend/pvc-values.yaml
