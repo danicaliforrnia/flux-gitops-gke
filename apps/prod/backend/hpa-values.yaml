@@ -1,8 +1,0 @@
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: backend-hpa
-  namespace: default
-spec:
-  minReplicas: 2
-  maxReplicas: 10
