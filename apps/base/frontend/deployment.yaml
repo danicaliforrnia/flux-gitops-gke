@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: default
+  labels:
+    app: hello
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: hello
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello
+        tier: frontend
+    spec:
+      serviceAccountName: frontend-sa
+      volumes:
+        - name: pvc-frontend-vol
+          persistentVolumeClaim:
+            claimName: pvc-frontend
+      containers:
+      - name: gke-frontend-app
+        image: europe-west1-docker.pkg.dev/cursos-imagina/imagina-registry-prod/gke-frontend-app:19e6bdd
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 80
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: pvc-frontend-vol
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
